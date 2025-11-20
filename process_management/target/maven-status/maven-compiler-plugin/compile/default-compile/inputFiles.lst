@@ -1,0 +1,16 @@
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\App.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\scheduling\PriorityScheduler.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\scheduling\ProcessScheduler.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\memory\LRUAlgorithm.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\scheduling\SJFScheduler.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\model\SimulationMetrics.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\memory\PageReplacementAlgorithm.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\memory\PageFrame.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\memory\FIFOAlgorithm.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\memory\MemoryManager.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\ProcessController.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\scheduling\SchedulerFactory.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\model\Process.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\memory\Page.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\scheduling\RoundRobinScheduler.java
+C:\Users\HP\Documents\GitHub\Proyectos-SO\process_management\src\main\java\uptc\edu\co\scheduling\BaseScheduler.java

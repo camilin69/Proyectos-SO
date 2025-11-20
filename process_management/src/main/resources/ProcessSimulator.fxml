@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #251F35;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uptc.edu.co.ProcessController">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <HBox prefHeight="100.0" prefWidth="1000.0">
+         <children>
+            <Pane prefHeight="100.0" prefWidth="262.0">
+               <children>
+                  <Label layoutX="35.0" layoutY="6.0" text="PROCESS" textFill="WHITE">
+                     <font>
+                        <Font name="Cascadia Code Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="36.0" text="MANAGEMENT" textFill="WHITE">
+                     <font>
+                        <Font name="Cascadia Code Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="65.0" text="SIMULATOR" textFill="WHITE">
+                     <font>
+                        <Font name="Cascadia Code Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="87.0" fitWidth="90.0" layoutX="143.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon_draw.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="0.0" specularConstant="2.0" specularExponent="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <Line endX="122.0" fill="WHITE" layoutX="115.0" layoutY="94.0" startX="-100.0" stroke="WHITE" />
+               </children>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="368.0">
+               <children>
+                  <Line fx:id="processConfigTabLine" endX="291.0" fill="WHITE" layoutX="59.0" layoutY="94.0" startX="-58.0" stroke="#f268ff" />
+                  <Label fx:id="processConfigTabLabel" layoutX="35.0" layoutY="36.0" onMouseClicked="#changeToSimulation" text="PROCESS CONFIGURATION" textFill="#f268ff">
+                     <font>
+                        <Font name="Cascadia Code Regular" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="272.0" layoutY="10.0" prefHeight="100.0" prefWidth="368.0">
+               <children>
+                  <Line fx:id="simulationTabLine" endX="296.0" fill="#9d9d9d" layoutX="59.0" layoutY="94.0" startX="-59.0" stroke="WHITE" />
+                  <Label fx:id="simulationTabText" layoutX="107.0" layoutY="36.0" onMouseClicked="#changeToProcessConfig" text="SIMULATION" textFill="#9d9d9d">
+                     <font>
+                        <Font name="Cascadia Code Regular" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      
+      <!-- PANEL DE CONFIGURACIÓN DE PROCESOS -->
+      <AnchorPane fx:id="processConfigPanel" layoutX="50.0" layoutY="120.0" prefHeight="629.0" prefWidth="900.0" style="-fx-background-color: #2A243D; -fx-background-radius: 20;">
+         <!-- ... contenido existente del panel de configuración ... -->
+         <children>
+            <Label layoutX="97.0" layoutY="42.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="124.0" text="Priority" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="68.0" layoutY="206.0" text="Duration" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="362.0" text="Memory" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="451.0" text="File Access" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameProcessText" layoutX="241.0" layoutY="36.0" prefHeight="41.0" prefWidth="176.0" promptText="process_1" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <font>
+                  <Font name="Cascadia Code Regular" size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="625.0" layoutY="28.0" text="Process Queue" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="processQueueComboBox" layoutX="578.0" layoutY="77.0" prefHeight="41.0" prefWidth="276.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-width: 3;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </ComboBox>
+            <Label layoutX="653.0" layoutY="209.0" text="Scheduler" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="schedulerComboBox" layoutX="578.0" layoutY="259.0" prefHeight="41.0" prefWidth="276.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-width: 3;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </ComboBox>
+            <Label layoutX="625.0" layoutY="390.0" text="Page Replacer" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="pageReplacerComboBox" layoutX="578.0" layoutY="445.0" prefHeight="41.0" prefWidth="276.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5; -fx-border-width: 3;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+            </ComboBox>
+            <Button layoutX="578.0" layoutY="558.0" mnemonicParsing="false" onAction="#startSimulation" prefHeight="35.0" prefWidth="276.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="START" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Bloom threshold="0.21" />
+               </effect>
+            </Button>
+            <TextField fx:id="priorityProcessText" layoutX="240.0" layoutY="118.0" prefHeight="41.0" prefWidth="176.0" promptText="-20 to 20" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="1">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <font>
+                  <Font name="Cascadia Code Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="durationProcessText" layoutX="240.0" layoutY="200.0" prefHeight="41.0" prefWidth="176.0" promptText="1s - 50s" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="40">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <font>
+                  <Font name="Cascadia Code Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="memoryProcessText" layoutX="241.0" layoutY="356.0" prefHeight="41.0" prefWidth="176.0" promptText="kbs" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <font>
+                  <Font name="Cascadia Code Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="fileAccessProcessText" layoutX="241.0" layoutY="445.0" prefHeight="41.0" prefWidth="176.0" promptText="r&amp;w - r - w" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="r">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <font>
+                  <Font name="Cascadia Code Regular" size="20.0" />
+               </font>
+            </TextField>
+            <Button layoutX="46.0" layoutY="558.0" mnemonicParsing="false" onAction="#addProcess" prefHeight="35.0" prefWidth="368.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="ADD PROCESS" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Bloom threshold="0.21" />
+               </effect>
+            </Button>
+            <Label layoutX="67.0" layoutY="288.0" text="CPU Use" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cpuUseProcessText" layoutX="241.0" layoutY="280.0" prefHeight="41.0" prefWidth="176.0" promptText="1% - 100%" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="20">
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
+               <font>
+                  <Font name="Cascadia Code Regular" size="20.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      
+      <!-- PANEL DE SIMULACIÓN -->
+      <AnchorPane fx:id="simulationPanel" layoutX="50.0" layoutY="120.0" prefHeight="625.0" prefWidth="906.0" style="-fx-background-color: #2A243D; -fx-background-radius: 20; -fx-border-color: #F268FF; -fx-border-radius: 20;" visible="false">
+         <children>
+            <Line endX="802.0" layoutX="101.0" layoutY="68.0" startX="-100.0" stroke="#f268ff" />
+            <Label layoutX="40.0" layoutY="21.0" text="Process Scheduler" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label layoutX="366.0" layoutY="20.0" text="Memory Pagination" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label layoutX="701.0" layoutY="20.0" text="File Manager" textFill="WHITE">
+               <font>
+                  <Font name="Cascadia Code Regular" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <VBox fx:id="processSchedulerVBox" layoutX="14.0" layoutY="77.0" prefHeight="540.0" prefWidth="288.0" />
+            <VBox fx:id="paginationVBox" layoutX="325.0" layoutY="77.0" prefHeight="540.0" prefWidth="322.0" />
+            <VBox fx:id="fileManagerVBox" layoutX="667.0" layoutY="77.0" prefHeight="540.0" prefWidth="229.0" />
+         </children>
+      </AnchorPane>
+
+      <!-- PANEL DE MÉTRICAS (OCUPARÁ EL MISMO ESPACIO QUE SIMULATION) -->
+      <AnchorPane fx:id="metricsPanel" layoutX="50.0" layoutY="120.0" prefHeight="625.0" prefWidth="906.0" style="-fx-background-color: #2A243D; -fx-background-radius: 20; -fx-border-color: #00ff00; -fx-border-radius: 20;" visible="false">
+         <children>
+            <VBox fx:id="metricsVBox" alignment="CENTER" prefHeight="625.0" prefWidth="906.0" spacing="20.0" style="-fx-padding: 20;">
+               <children>
+                  <Label fx:id="metricsTitleLabel" style="-fx-text-fill: #f268ff; -fx-font-size: 18; -fx-font-weight: bold;" text="MÉTRICAS DE SIMULACIÓN" />
+                  
+                  <ScrollPane fx:id="metricsScrollPane" style="-fx-background: #2A243D; -fx-border-color: #f268ff;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox style="-fx-padding: 10; -fx-background-color: #2A243D;" />
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="showMetricsButton" mnemonicParsing="false" onAction="#resetFromMetrics" prefHeight="35.0" prefWidth="223.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="Back" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Cascadia Code Regular" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Bloom threshold="0.21" />
+                     </effect>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      
+      <!-- BOTONES DE CONTROL -->
+      <Button fx:id="stopSimulationButton" layoutX="50.0" layoutY="757.0" mnemonicParsing="false" onAction="#stopSimulation" prefHeight="35.0" prefWidth="223.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="STOP" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Cascadia Code Regular" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.21" />
+         </effect>
+      </Button>
+      <Button fx:id="resetSimulationButton" layoutX="733.0" layoutY="757.0" mnemonicParsing="false" onAction="#resetSimulation" prefHeight="35.0" prefWidth="223.0" style="-fx-background-color: #251F35; -fx-border-color: #f268ff; -fx-background-radius: 5; -fx-border-radius: 5;" text="RESET" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Cascadia Code Regular" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Bloom threshold="0.21" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
